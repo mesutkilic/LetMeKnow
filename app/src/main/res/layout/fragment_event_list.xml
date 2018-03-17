@@ -8,7 +8,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.vsahin.letmeknow.HomeActivity">
 
-    <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+    <android.support.v7.widget.RecyclerView
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"

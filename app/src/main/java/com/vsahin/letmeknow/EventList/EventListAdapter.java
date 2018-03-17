@@ -43,6 +43,8 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.MyVi
         Event e = events.get(position);
 
         viewHolder.getTextviewTitle().setText(e.getTitle());
+        viewHolder.getTextViewContent().setText(e.getContent());
+        viewHolder.getTextviewGroup().setText(e.getGroup());
     }
 
     @Override
@@ -54,11 +56,25 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.MyVi
         @BindView(R.id.textview_title)
         TextView textviewTitle;
 
-        public TextView getTextviewTitle() {
+        @BindView(R.id.textview_content)
+        TextView textViewContent;
+
+        @BindView(R.id.textview_group)
+        TextView textviewGroup;
+
+        TextView getTextviewTitle() {
             return textviewTitle;
         }
 
-        public MyViewHolder(View itemView) {
+        TextView getTextViewContent() {
+            return textViewContent;
+        }
+
+        TextView getTextviewGroup() {
+            return textviewGroup;
+        }
+
+        MyViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
 

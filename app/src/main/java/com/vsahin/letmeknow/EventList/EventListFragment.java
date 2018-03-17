@@ -45,11 +45,17 @@ public class EventListFragment extends Fragment implements RecyclerViewItemClick
 
 
         Event e1 = new Event();
-        e1.setTitle("title1");
+        e1.setTitle("title1title1title1title1title1title1");
+        e1.setContent("content1content1content1content1content1content1content1content1content1");
+        e1.setGroup("group1");
         Event e2 = new Event();
-        e2.setTitle("title2");
+        e2.setTitle("title2title2title2title2title2title2");
+        e2.setContent("content2content2content2content2content2content2content2content2content2content2");
+        e2.setGroup("group2");
         Event e3 = new Event();
-        e3.setTitle("title3");
+        e3.setTitle("title3title3title3title3title3title3");
+        e3.setContent("content3content3content3content3content3content3content3content3content3content3");
+        e3.setGroup("group3");
 
         ArrayList<Event> list = new ArrayList<>();
         list.add(e1);

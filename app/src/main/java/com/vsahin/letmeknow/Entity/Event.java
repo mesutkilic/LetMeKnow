@@ -7,7 +7,7 @@ package com.vsahin.letmeknow.Entity;
 public class Event {
     private long id;
     private String title;
-    private String name;
+    private String content;
     private String group;
 
     public long getId() {
@@ -26,12 +26,12 @@ public class Event {
         this.title = title;
     }
 
-    public String getName() {
-        return name;
+    public String getContent() {
+        return content;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public String getGroup() {
