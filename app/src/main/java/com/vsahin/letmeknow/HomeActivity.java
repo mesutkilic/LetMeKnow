@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.vsahin.letmeknow.EventList.EventListFragment;
 
 import butterknife.BindView;
@@ -37,6 +38,7 @@ public class HomeActivity extends AppCompatActivity {
         fragmentManager = getSupportFragmentManager();
 
         showRootFragment(EventListFragment.newInstance());
+        FirebaseMessaging.getInstance().subscribeToTopic("pushNotifications");
     }
 
     public void showRootFragment(Fragment fragment){

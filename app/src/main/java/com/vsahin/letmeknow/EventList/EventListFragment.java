@@ -15,6 +15,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.vsahin.letmeknow.AddEvent.AddEventFragment;
 import com.vsahin.letmeknow.Entity.Event;
 import com.vsahin.letmeknow.EventDetail.EventDetailFragment;
@@ -22,6 +23,7 @@ import com.vsahin.letmeknow.HomeActivity;
 import com.vsahin.letmeknow.R;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import butterknife.BindView;
@@ -85,6 +87,8 @@ public class EventListFragment extends Fragment implements RecyclerViewItemClick
                 for (DataSnapshot child: dataSnapshot.getChildren()) {
                     eventList.add(child.getValue(Event.class));
                 }
+
+                Collections.reverse(eventList);
                 adapter.notifyDataSetChanged();
             }
 

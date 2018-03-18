@@ -12,8 +12,11 @@ import android.widget.Spinner;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.firebase.messaging.RemoteMessage;
 import com.vsahin.letmeknow.Entity.Event;
 import com.vsahin.letmeknow.R;
+import com.vsahin.letmeknow.gcm.Message;
 
 import java.util.ArrayList;
 
@@ -42,6 +45,7 @@ public class AddEventFragment extends Fragment {
 
     FirebaseDatabase database;
     DatabaseReference myRef;
+    DatabaseReference messagesRef;
 
     @Nullable
     @Override
@@ -58,7 +62,7 @@ public class AddEventFragment extends Fragment {
 
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference().child("events");
-
+        messagesRef = database.getReference().child("messages");
     }
 
     @OnClick(R.id.button_save)
@@ -76,7 +80,21 @@ public class AddEventFragment extends Fragment {
             event.setGroup((String) spinnerEventGroup.getSelectedItem());
         }
         myRef.child(key).setValue(event);
+
+
+        messagesRef.push().setValue(new Message(event.getTitle(), event.getContent()));
+        sendNotificationToUser(event);
+
         getActivity().onBackPressed();
+    }
+
+    public void sendNotificationToUser(final Event event) {
+        FirebaseMessaging fm = FirebaseMessaging.getInstance();
+        fm.send(new RemoteMessage.Builder(1 + "@gcm.googleapis.com")
+                .setMessageId(event.getId())
+                .addData("my_message", "Hello World")
+                .addData("my_action","SAY_HELLO")
+                .build());
     }
 
     public void fillSpinner(){
