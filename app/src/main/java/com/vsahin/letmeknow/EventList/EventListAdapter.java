@@ -26,7 +26,7 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.MyVi
     private List<Event> events;
     RecyclerViewItemClickListener recyclerViewItemClickListener;
 
-    public EventListAdapter(Context context, ArrayList<Event> events, RecyclerViewItemClickListener listener) {
+    public EventListAdapter(Context context, List<Event> events, RecyclerViewItemClickListener listener) {
         this.layoutInflater = LayoutInflater.from(context);
         this.events = events;
         this.recyclerViewItemClickListener = listener;

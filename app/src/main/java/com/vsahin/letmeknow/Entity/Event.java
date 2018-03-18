@@ -1,20 +1,22 @@
 package com.vsahin.letmeknow.Entity;
 
+import java.io.Serializable;
+
 /**
  * Created by volkansahin on 17.03.2018.
  */
 
-public class Event {
-    private long id;
+public class Event implements Serializable {
+    private String id;
     private String title;
     private String content;
     private String group;
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
