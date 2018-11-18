@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
     defaultConfig {
-        resConfigs "auto"
+        //resConfigs "auto"
         applicationId "com.vsahin.letmeknow"
         minSdkVersion 21
         targetSdkVersion 26
@@ -31,9 +31,11 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-auth:3.2.2'
     implementation "com.jakewharton:butterknife:8.8.1"
     annotationProcessor "com.jakewharton:butterknife-compiler:8.8.1"
-    compile 'com.squareup.picasso:picasso:2.5.2'
-    compile 'com.google.firebase:firebase-messaging:11.8.0'
-    compile 'com.firebase:firebase-jobdispatcher:0.8.5'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.google.firebase:firebase-messaging:11.8.0'
+    implementation 'com.firebase:firebase-jobdispatcher:0.8.5'
+    implementation 'com.google.firebase:firebase-storage:11.8.0'
+    implementation 'com.google.firebase:firebase-core:11.8.0'
 }
 
 
